@@ -1,0 +1,46 @@
+{% extends 'core/base.html' %} {% block content %}
+
+<div class="container">
+    {% if todos %}
+    <div class="mt-4">
+        <table class="table table-hover">
+            <thread>
+                <tr>
+                    <th scope="col">Title:</th>
+                    <th scope="col">Description:</th>
+                    <th scope="col">Is Completed:</th>
+                    <th scope="col">Time Elapsed:</th>
+                    <th scope="col">Created By:</th>
+                </tr>
+            </thread>
+            {% for todo in todos %}
+            <tbody>
+                <tr>
+                    <td>
+                        <a href="{% url 'detail' todo.id %}"
+                            >{{todo.todo_title}}</a
+                        >
+                    </td>
+                    <td>{{todo.todo_description}}</td>
+                    {% if todo.todo_is_completed %}
+                    <td>Yes</td>
+                    {% else %}
+                    <td>No</td>
+                    {% endif %}
+                    {% if todo.todo_created_on == todo.todo_modified_on %}
+                        <td>{{todo.todo_created_on|timesince:current_date}}</td>
+                    {% else %}
+                        <td>{{todo.todo_modified_on|timesince:current_date}}</td>
+                    {% endif %}
+                    <td>{{todo.todo_created_by}}</td>
+                </tr>
+            </tbody>
+            {% endfor %}
+            <caption class="mt-2">
+                Total number of records: {{count_rows}}
+            </caption>
+        </table>
+    </div>
+    {% endif %}
+</div>
+{% endblock content %}

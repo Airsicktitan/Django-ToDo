@@ -1,0 +1,35 @@
+{% extends 'core/base.html' %} {% block content %} {% load crispy_forms_tags %}
+
+<!-- Header-->
+<header class="bg-dark py-2">
+    <div class="px-4 pb-5">
+        <div class="text-center text-white">
+            <h1 class="display-4 fw-bolder">Register</h1>
+            <p class="lead fw-normal text-white-50 mb-0">
+                Register for a user account...
+            </p>
+        </div>
+    </div>
+</header>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <br /><br />
+            <form method="post" action="{% url 'register' %}">
+                {% csrf_token %} {% crispy form %}
+                <br />
+                <div class="d-flex flex-column">
+                    <button type="submit" class="btn btn-secondary">
+                        Register
+                    </button>
+                    <a href="{% url 'login' %}" class="mt-2"
+                        >Already have an account? Sign in here!</a
+                    >
+                </div>
+            </form>
+            <br /><br />
+            <br /><br />
+        </div>
+    </div>
+</div>
+{% endblock content %}

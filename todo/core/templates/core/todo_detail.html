@@ -1,0 +1,42 @@
+{% extends 'core/base.html' %} {% load crispy_forms_tags %} {% block content %}
+<div class="container">
+    <div class="mt-4">
+        <table class="table table-hover">
+            <thread>
+                <tr>
+                    <th scope="col">Title:</th>
+                    <th scope="col">Description:</th>
+                    <th scope="col">Created On:</th>
+                    <th scope="col">Modified On:</th>
+                    <th scope="col">Is Completed:</th>
+                    <th scope="col">Created By:</th>
+                </tr>
+            </thread>
+            <tbody>
+                <tr>
+                    <td>{{todo.todo_title}}</td>
+                    <td>{{todo.todo_description}}</td>
+                    <td>{{todo.todo_created_on}}</td>
+                    <td>{{todo.todo_modified_on}}</td>
+                    {% if todo.todo_is_completed %}
+                    <td>Yes</td>
+                    {% else %}
+                    <td>No</td>
+                    {% endif %}
+                    <td>{{todo.todo_created_by}}</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <div class="pt-3">
+            <a href="{% url 'home' %}" class="btn btn-primary">Back</a>
+            <a href="{% url 'update' todo.pk %}" class="btn btn-primary ms-2"
+                >Edit</a
+            >
+            <a href="{% url 'delete' todo.pk %}" class="btn btn-danger ms-2"
+                >Delete</a
+            >
+        </div>
+    </div>
+</div>
+{% endblock content %}

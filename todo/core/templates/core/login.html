@@ -1,0 +1,51 @@
+{% extends 'core/base.html' %} {% block content %}
+
+<div class="container">
+    <div class="container pb-5">
+        <div class="text-center text-black pb-2 mt-4">
+            <h1 class="display-5 fw-bolder">Login to view your To-Do's</h1>
+        </div>
+        <div class="row">
+            <center>
+                <div class="col-3">
+                    <br /><br />
+                    <form method="post" action="{% url 'login' %}">
+                        {% csrf_token %}
+                        <div class="mb-3">
+                            <input
+                                type="text"
+                                class="form-control"
+                                name="username"
+                                placeholder="Enter your username"
+                            />
+                        </div>
+                        <div class="mb-3">
+                            <input
+                                type="password"
+                                class="form-control"
+                                name="password"
+                                placeholder="Enter your password"
+                            />
+                        </div>
+                        <div class="d-flex flex-column">
+                            <button type="submit" class="btn btn-secondary">
+                                Login
+                            </button>
+                            <a href="{% url 'register' %}" class="mt-2"
+                                ><small
+                                    >Don't have an account? Register
+                                    here!</small
+                                ></a
+                            >
+                        </div>
+                    </form>
+                    <br /><br />
+                    <br /><br />
+                    <br /><br />
+                    <br /><br />
+                </div>
+            </center>
+        </div>
+    </div>
+    {% endblock content %}
+</div>
