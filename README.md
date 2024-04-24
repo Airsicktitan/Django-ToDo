@@ -1,5 +1,6 @@
 # Django-ToDo
-A ToDo Application that requires you to login in to view every To-Do
+A ToDo Application that requires you to login in to view every To-Do.  This app allows admin users to see every single To-Do on the site, while users who are not admins can only see their To-Do items.
+
 ![Django-ToDo-HomePageLoggedOut](https://github.com/Airsicktitan/Django-ToDo/assets/22113361/985c37a3-29eb-4280-9458-8bc2610284e6)
 ![Django-ToDo-RegisterPage](https://github.com/Airsicktitan/Django-ToDo/assets/22113361/ddc23699-607e-4962-8da3-7626657e55c7)
 ![Django-ToDo-HomePageLoggedIn](https://github.com/Airsicktitan/Django-ToDo/assets/22113361/aac09b2f-ed94-4fcf-a5bb-0e3e95320c8e)
