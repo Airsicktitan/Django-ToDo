@@ -7,3 +7,4 @@ A ToDo Application that requires you to login in to view every To-Do.  This app 
 ![Django-ToDo-Detail](https://github.com/Airsicktitan/Django-ToDo/assets/22113361/b3c08fff-af22-4ca9-afae-20cd1078119f)
 ![Django-ToDo-Update](https://github.com/Airsicktitan/Django-ToDo/assets/22113361/cb0ea784-11ff-494c-985e-fe49bc882b5b)
 ![Django-ToDo-Add](https://github.com/Airsicktitan/Django-ToDo/assets/22113361/bb17a5c9-0775-4bb6-b510-84d5c37256c2)
+![Django-ToDo-UserNotAdmin](https://github.com/Airsicktitan/Django-ToDo/assets/22113361/71117ec1-d1a7-465f-85c7-2025b777e2b5)
