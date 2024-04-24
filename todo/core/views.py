@@ -92,10 +92,11 @@ def delete_todo(request, pk):
 
 def add_todo(request):
     form = EditToDo()
+    form.initial = {'todo_created_by': request.user}
     if request.user.is_authenticated:
         if request.method == "POST":
             form = EditToDo(request.POST)
-
+            
             if form.is_valid():
                 form.save()
                 messages.success(request, "You have added a new To-Do item succesfully! 🙌")
@@ -113,6 +114,7 @@ def update_todo(request, pk):
     if request.user.is_authenticated:
         current_record = get_object_or_404(toDoList, pk = pk)
         form = EditToDo(request.POST or None, instance = current_record)
+        form.initial = {'todo_created_by': request.user}
 
         if form.is_valid():
             form.save()
